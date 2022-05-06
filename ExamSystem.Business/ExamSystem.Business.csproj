@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A3F35A2E-83B6-4FFF-A003-1000D1591231}</ProjectGuid>
+    <ProjectGuid>{78566832-87D8-48C1-8DD5-BA5A9E30BDCB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExamSystem.Buisness</RootNamespace>
-    <AssemblyName>ExamSystem.Buisness</AssemblyName>
+    <RootNamespace>ExamSystem.Business</RootNamespace>
+    <AssemblyName>ExamSystem.Business</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -46,12 +46,6 @@
   <ItemGroup>
     <Folder Include="Abstract\" />
     <Folder Include="Concrete\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExamSystem.Entities\ExamSystem.Entities.csproj">
-      <Project>{5de13c92-6c9d-419b-9780-a9707034426f}</Project>
-      <Name>ExamSystem.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

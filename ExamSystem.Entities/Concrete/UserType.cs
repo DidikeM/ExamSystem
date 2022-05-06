@@ -1,6 +1,8 @@
-﻿namespace ExamSystem.Entities.Concrete
+﻿using ExamSystem.Entities.Abstract;
+
+namespace ExamSystem.Entities.Concrete
 {
-    public class UserType
+    public class UserType : IEntity
     {
         public int ID { get; set; }
         public string Name { get; set; }

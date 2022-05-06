@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExamSystem.Entities.Abstract;
 
 namespace ExamSystem.Entities.Concrete
 {
-    public class TimeInterval
+    public class TimeInterval : IEntity
     {
         public int ID { get; set; }
         public DateTime Interval1 { get; set; }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExamSystem.Entities.Abstract;
 
 namespace ExamSystem.Entities.Concrete
 {
-    public class Exam
+    public class Exam : IEntity
     {
         public int ID { get; set; }
         public int PreparedID { get; set; }

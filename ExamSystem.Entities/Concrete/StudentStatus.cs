@@ -1,8 +1,9 @@
 ﻿using System;
+using ExamSystem.Entities.Abstract;
 
 namespace ExamSystem.Entities.Concrete
 {
-    public class StudentStatus
+    public class StudentStatus : IEntity
     {
         public int StudentID { get; set; }
         public int QuestionID { get; set; }

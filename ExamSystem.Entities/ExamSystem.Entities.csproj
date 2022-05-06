@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\ChoiceFormats.cs" />
+    <Compile Include="Abstract\IEntity.cs" />
+    <Compile Include="Concrete\ChoiceFormat.cs" />
     <Compile Include="Concrete\Exam.cs" />
-    <Compile Include="Concrete\ExamQuestions.cs" />
+    <Compile Include="Concrete\ExamQuestion.cs" />
     <Compile Include="Concrete\Lecture.cs" />
-    <Compile Include="Concrete\Choices.cs" />
+    <Compile Include="Concrete\Choice.cs" />
     <Compile Include="Concrete\Question.cs" />
     <Compile Include="Concrete\Section.cs" />
     <Compile Include="Concrete\Student.cs" />
@@ -56,8 +57,6 @@
     <Compile Include="Concrete\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

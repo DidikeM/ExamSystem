@@ -1,6 +1,8 @@
-﻿namespace ExamSystem.Entities.Concrete
+﻿using ExamSystem.Entities.Abstract;
+
+namespace ExamSystem.Entities.Concrete
 {
-    public class Unit
+    public class Unit : IEntity
     {
         public int ID { get; set; }
         public int LectureID { get; set; }
