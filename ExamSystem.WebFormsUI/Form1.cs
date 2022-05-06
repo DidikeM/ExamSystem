@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExamSystem.Business.Abstract;
+using ExamSystem.Business.Concrete;
+using ExamSystem.DataAccess.Concrete.EntityFramework;
 
 namespace ExamSystem.WebFormsUI
 {
@@ -14,7 +10,14 @@ namespace ExamSystem.WebFormsUI
     {
         public Form1()
         {
+            _lectureService = new LectureManager(new EfLectureDal());
             InitializeComponent();
+        }
+
+        private ILectureService _lectureService;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = _lectureService.GetAll();
         }
     }
 }

@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,11 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IChoiceService.cs" />
+    <Compile Include="Abstract\ILectureService.cs" />
+    <Compile Include="Concrete\ChoiceManager.cs" />
+    <Compile Include="Concrete\LectureManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrete\" />
+    <ProjectReference Include="..\ExamSystem.DataAccess\ExamSystem.DataAccess.csproj">
+      <Project>{c4cdee7d-46e1-44f2-87ed-da853ac0ba80}</Project>
+      <Name>ExamSystem.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExamSystem.Entities\ExamSystem.Entities.csproj">
+      <Project>{5de13c92-6c9d-419b-9780-a9707034426f}</Project>
+      <Name>ExamSystem.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
