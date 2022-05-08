@@ -16,9 +16,9 @@ using ExamSystem.DataAccess.Concrete.EntityFramework;
 
 namespace TestProject
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             _lectureService = InstanceFactory.GetInstance<ILectureService>();
             InitializeComponent();
@@ -49,7 +49,7 @@ namespace TestProject
             //richEditControl1.BackColor = Color.Transparent;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
             _lectureService.GetAll();
         }
@@ -57,11 +57,6 @@ namespace TestProject
         private void richTextBox1_EnabledChanged(object sender, EventArgs e)
         {
             
-        }
-
-        private void flyoutPanelControl1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
