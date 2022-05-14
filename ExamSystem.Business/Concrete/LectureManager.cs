@@ -18,5 +18,10 @@ namespace ExamSystem.Business.Concrete
         {
             return _lectureDal.GetAll();
         }
+
+        public Lecture GetById(int id)
+        {
+            return _lectureDal.Get(p => p.ID == id);
+        }
     }
 }

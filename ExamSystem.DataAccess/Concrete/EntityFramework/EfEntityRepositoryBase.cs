@@ -16,7 +16,7 @@ namespace ExamSystem.DataAccess.Concrete.EntityFramework
         {
             using (TContext context = new TContext())
             {
-                return context.Set<T>().SingleOrDefault(filter);
+                return context.Set<T>().FirstOrDefault(filter);
             }
         }
 

@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.Commands;
 using ExamSystem.Business.Abstract;
-using ExamSystem.Business.Concrete;
 using ExamSystem.Business.DependencyResolvers.Ninject;
-using ExamSystem.DataAccess.Concrete.EntityFramework;
 
-namespace TestProject
+namespace TestProject.TestForms
 {
     public partial class Form2 : Form
     {
@@ -34,13 +26,13 @@ namespace TestProject
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            richEditControl1.SaveDocument("1.rtf", DocumentFormat.Rtf);
+            richEditControl1.SaveDocument("..\\..\\Questions\\1.rtf", DocumentFormat.Rtf);
 
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            richTextBox1.LoadFile("1.rtf");
+            richTextBox1.LoadFile("..\\..\\Questions\\1.rtf");
             richTextBox1.BackColor = Color.Red;
             richTextBox1.Enabled = false;
             richTextBox1.BackColor = Color.Red;
@@ -57,6 +49,12 @@ namespace TestProject
         private void richTextBox1_EnabledChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            XtraForm1 xtraForm1 = new XtraForm1();
+            xtraForm1.ShowDialog();
         }
     }
 }

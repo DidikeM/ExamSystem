@@ -6,5 +6,6 @@ namespace ExamSystem.Business.Abstract
     public interface ILectureService
     {
         List<Lecture> GetAll();
+        Lecture GetById(int id);
     }
 }

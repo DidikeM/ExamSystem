@@ -1,5 +1,5 @@
 ﻿
-namespace TestProject
+namespace TestProject.TestForms
 {
     partial class Form2
     {
@@ -35,6 +35,7 @@ namespace TestProject
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
@@ -65,7 +66,7 @@ namespace TestProject
             this.simpleButton1.Location = new System.Drawing.Point(3, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.tablePanel2.SetRow(this.simpleButton1, 0);
-            this.simpleButton1.Size = new System.Drawing.Size(214, 113);
+            this.simpleButton1.Size = new System.Drawing.Size(214, 73);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "simpleButton1";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -74,10 +75,10 @@ namespace TestProject
             // 
             this.tablePanel2.SetColumn(this.simpleButton2, 0);
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton2.Location = new System.Drawing.Point(3, 122);
+            this.simpleButton2.Location = new System.Drawing.Point(3, 82);
             this.simpleButton2.Name = "simpleButton2";
             this.tablePanel2.SetRow(this.simpleButton2, 1);
-            this.simpleButton2.Size = new System.Drawing.Size(214, 113);
+            this.simpleButton2.Size = new System.Drawing.Size(214, 73);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "simpleButton2";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -119,6 +120,7 @@ namespace TestProject
             this.tablePanel1.SetColumn(this.tablePanel2, 1);
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
+            this.tablePanel2.Controls.Add(this.simpleButton3);
             this.tablePanel2.Controls.Add(this.simpleButton1);
             this.tablePanel2.Controls.Add(this.simpleButton2);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -127,9 +129,21 @@ namespace TestProject
             this.tablePanel1.SetRow(this.tablePanel2, 0);
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.tablePanel2.Size = new System.Drawing.Size(220, 238);
             this.tablePanel2.TabIndex = 5;
+            // 
+            // simpleButton3
+            // 
+            this.tablePanel2.SetColumn(this.simpleButton3, 0);
+            this.simpleButton3.Location = new System.Drawing.Point(3, 161);
+            this.simpleButton3.Name = "simpleButton3";
+            this.tablePanel2.SetRow(this.simpleButton3, 2);
+            this.simpleButton3.Size = new System.Drawing.Size(214, 74);
+            this.simpleButton3.TabIndex = 4;
+            this.simpleButton3.Text = "simpleButton3";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // Form2
             // 
@@ -156,6 +170,7 @@ namespace TestProject
         private System.Windows.Forms.RichTextBox richTextBox1;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }
 
