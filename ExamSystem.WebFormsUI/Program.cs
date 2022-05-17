@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExamSystem.Business.Abstract;
+using ExamSystem.Business.DependencyResolvers.Ninject;
+using ExamSystem.Entities.Concrete;
+using ExamSystem.WebFormsUI.Forms;
+using ExamSystem.WebFormsUI.Forms.ExaminerForms;
 
 namespace ExamSystem.WebFormsUI
 {
@@ -16,7 +18,9 @@ namespace ExamSystem.WebFormsUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new FrmExaminerQuestionAdd());
+            Application.Run(new FrmQuestionView(6));
         }
+
     }
 }

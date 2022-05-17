@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IChoiceService.cs" />
+    <Compile Include="Abstract\IExaminerService.cs" />
     <Compile Include="Abstract\ILectureService.cs" />
     <Compile Include="Abstract\IQuestionService.cs" />
     <Compile Include="Abstract\IChoiceFormatService .cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Abstract\IUserTypeService.cs" />
     <Compile Include="Concrete\ChoiceFormatManager.cs" />
     <Compile Include="Concrete\ChoiceManager.cs" />
+    <Compile Include="Concrete\ExaminerManager.cs" />
     <Compile Include="Concrete\ExamManager.cs" />
     <Compile Include="Concrete\ExamQuestionManager.cs" />
     <Compile Include="Concrete\UserTypeManager.cs" />

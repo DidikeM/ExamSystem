@@ -1,4 +1,5 @@
-﻿using ExamSystem.Business.Abstract;
+﻿using System.Collections.Generic;
+using ExamSystem.Business.Abstract;
 using ExamSystem.DataAccess.Abstract;
 using ExamSystem.Entities.Concrete;
 
@@ -16,6 +17,11 @@ namespace ExamSystem.Business.Concrete
         public Section GetById(int id)
         {
             return _sectionDal.Get(p => p.ID == id);
+        }
+
+        public List<Section> GetByUnitId(int id)
+        {
+            return _sectionDal.GetAll(p => p.UnitID == id);
         }
     }
 }

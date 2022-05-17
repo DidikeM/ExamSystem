@@ -2,8 +2,8 @@
 
 namespace ExamSystem.Business.Abstract
 {
-    public interface IStudentService
+    public interface IExaminerService
     {
-        void Add(Student student);
+        void Add(Examiner examiner);
     }
 }

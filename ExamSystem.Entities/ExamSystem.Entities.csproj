@@ -44,6 +44,7 @@
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\ChoiceFormat.cs" />
     <Compile Include="Concrete\Exam.cs" />
+    <Compile Include="Concrete\Examiner.cs" />
     <Compile Include="Concrete\ExamQuestion.cs" />
     <Compile Include="Concrete\Lecture.cs" />
     <Compile Include="Concrete\Choice.cs" />

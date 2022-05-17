@@ -16,6 +16,9 @@ namespace ExamSystem.Business.DependencyResolvers.Ninject
             Bind<IChoiceService>().To<ChoiceManager>().InSingletonScope();
             Bind<IChoiceDal>().To<EfChoiceDal>().InSingletonScope();
 
+            Bind<IExaminerService>().To<ExaminerManager>().InSingletonScope();
+            Bind<IExaminerDal>().To<EfExaminerDal>().InSingletonScope();
+
             Bind<IExamService>().To<ExamManager>().InSingletonScope();
             Bind<IExamDal>().To<EfExamDal>().InSingletonScope();
 

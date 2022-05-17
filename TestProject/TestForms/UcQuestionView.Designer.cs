@@ -47,14 +47,14 @@ namespace TestProject.TestForms
             this.lblgradeNumber = new DevExpress.XtraEditors.LabelControl();
             this.recQuestion = new DevExpress.XtraRichEdit.RichEditControl();
             this.tbpMain = new DevExpress.Utils.Layout.TablePanel();
-            this.rdgChoices = new DevExpress.XtraEditors.RadioGroup();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.tbpQuestion)).BeginInit();
             this.tbpQuestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbpQuestionİnfo)).BeginInit();
             this.tbpQuestionİnfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbpMain)).BeginInit();
             this.tbpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rdgChoices.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbpQuestion
@@ -64,7 +64,7 @@ namespace TestProject.TestForms
             this.tbpMain.SetColumn(this.tbpQuestion, 1);
             this.tbpQuestion.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tbpQuestion.Controls.Add(this.rdgChoices);
+            this.tbpQuestion.Controls.Add(this.tablePanel1);
             this.tbpQuestion.Controls.Add(this.tbpQuestionİnfo);
             this.tbpQuestion.Controls.Add(this.recQuestion);
             this.tbpQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -76,7 +76,7 @@ namespace TestProject.TestForms
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 500F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F)});
-            this.tbpQuestion.Size = new System.Drawing.Size(1240, 678);
+            this.tbpQuestion.Size = new System.Drawing.Size(1240, 698);
             this.tbpQuestion.TabIndex = 0;
             this.tbpQuestion.Paint += new System.Windows.Forms.PaintEventHandler(this.tbMain_Paint);
             // 
@@ -312,25 +312,27 @@ namespace TestProject.TestForms
             this.tbpMain.Name = "tbpMain";
             this.tbpMain.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tbpMain.Size = new System.Drawing.Size(1393, 678);
+            this.tbpMain.Size = new System.Drawing.Size(1393, 698);
             this.tbpMain.TabIndex = 1;
             // 
-            // rdgChoices
+            // tablePanel1
             // 
-            this.tbpQuestion.SetColumn(this.rdgChoices, 0);
-            this.rdgChoices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdgChoices.Location = new System.Drawing.Point(0, 600);
-            this.rdgChoices.Margin = new System.Windows.Forms.Padding(0);
-            this.rdgChoices.Name = "rdgChoices";
-            this.rdgChoices.Properties.Columns = 1;
-            this.rdgChoices.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem()});
-            this.tbpQuestion.SetRow(this.rdgChoices, 2);
-            this.rdgChoices.Size = new System.Drawing.Size(1240, 78);
-            this.rdgChoices.TabIndex = 2;
+            this.tbpQuestion.SetColumn(this.tablePanel1, 0);
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(3, 603);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tbpQuestion.SetRow(this.tablePanel1, 2);
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(1234, 92);
+            this.tablePanel1.TabIndex = 2;
             // 
             // UcQuestionView
             // 
@@ -338,7 +340,7 @@ namespace TestProject.TestForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tbpMain);
             this.Name = "UcQuestionView";
-            this.Size = new System.Drawing.Size(1393, 678);
+            this.Size = new System.Drawing.Size(1393, 698);
             this.Load += new System.EventHandler(this.UcQuestionView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbpQuestion)).EndInit();
             this.tbpQuestion.ResumeLayout(false);
@@ -347,7 +349,7 @@ namespace TestProject.TestForms
             this.tbpQuestionİnfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbpMain)).EndInit();
             this.tbpMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rdgChoices.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,6 +372,6 @@ namespace TestProject.TestForms
         private DevExpress.XtraEditors.LabelControl lblSectionNumber;
         private DevExpress.XtraEditors.LabelControl lblUnitNumber;
         private DevExpress.XtraEditors.LabelControl lblgradeNumber;
-        private DevExpress.XtraEditors.RadioGroup rdgChoices;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
     }
 }

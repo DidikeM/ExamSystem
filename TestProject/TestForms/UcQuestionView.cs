@@ -17,11 +17,12 @@ namespace TestProject.TestForms
     public partial class UcQuestionView : DevExpress.XtraEditors.XtraUserControl
     {
         private IQuestionService _questionService = InstanceFactory.GetInstance<IQuestionService>();
+        private Question _question;
         private IChoiceService _choiceService = InstanceFactory.GetInstance<IChoiceService>();
         private ISectionService _sectionService = InstanceFactory.GetInstance<ISectionService>();
         private IUnitService _unitService = InstanceFactory.GetInstance<IUnitService>();
         private ILectureService _lectureService = InstanceFactory.GetInstance<ILectureService>();
-        private Question _question;
+
         public UcQuestionView()
         {
             InitializeComponent();
@@ -44,7 +45,6 @@ namespace TestProject.TestForms
             Lecture lecture = _lectureService.GetById(unit.LectureID);
             lblgradeNumberValue.Text = lecture.GradeNumber.ToString();
             lblLectureNameValue.Text = lecture.Name;
-
         }
 
         private void LoadQuestion()

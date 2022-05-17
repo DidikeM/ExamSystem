@@ -1,4 +1,5 @@
-﻿using ExamSystem.Business.Abstract;
+﻿using System.Collections.Generic;
+using ExamSystem.Business.Abstract;
 using ExamSystem.DataAccess.Abstract;
 using ExamSystem.Entities.Concrete;
 
@@ -16,6 +17,11 @@ namespace ExamSystem.Business.Concrete
         public Unit GetById(int id)
         {
             return _unitDal.Get(p => p.ID == id);
+        }
+
+        public List<Unit> GetByLectureId(int id)
+        {
+            return _unitDal.GetAll(p => p.LectureID == id);
         }
     }
 }

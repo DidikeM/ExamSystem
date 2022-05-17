@@ -17,5 +17,15 @@ namespace ExamSystem.Business.Concrete
         {
             return _questionDal.Get(p => p.ID == id);
         }
+
+        public void Add(Question question)
+        {
+            _questionDal.Add(question);
+        }
+
+        public void Update(Question question)
+        {
+            _questionDal.Update(question);
+        }
     }
 }

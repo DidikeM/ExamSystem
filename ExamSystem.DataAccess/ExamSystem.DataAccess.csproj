@@ -55,6 +55,7 @@
     <Compile Include="Abstract\IChoiceFormatDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
     <Compile Include="Abstract\IExamDal.cs" />
+    <Compile Include="Abstract\IExaminerDal.cs" />
     <Compile Include="Abstract\IExamQuestionDal.cs" />
     <Compile Include="Abstract\ILectureDal.cs" />
     <Compile Include="Abstract\IQuestionDal.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Concrete\EntityFramework\EfChoiceFormatDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfEntityRepositoryBase.cs" />
     <Compile Include="Concrete\EntityFramework\EfExamDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfExaminerDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfExamQuestionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfLectureDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfQuestionDal.cs" />
