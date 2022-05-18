@@ -17,5 +17,10 @@ namespace ExamSystem.Business.Concrete
         {
             _studentDal.Add(student);
         }
+
+        public Student GetById(int id)
+        {
+            return _studentDal.Get(p => p.ID == id);
+        }
     }
 }

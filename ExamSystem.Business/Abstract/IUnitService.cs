@@ -8,5 +8,6 @@ namespace ExamSystem.Business.Abstract
     {
         Unit GetById(int unitID);
         List<Unit> GetByLectureId(int id);
+        void Add(Unit unit);
     }
 }

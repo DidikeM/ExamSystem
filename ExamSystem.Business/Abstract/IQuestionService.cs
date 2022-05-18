@@ -1,4 +1,5 @@
-﻿using ExamSystem.Entities.Concrete;
+﻿using System.Collections.Generic;
+using ExamSystem.Entities.Concrete;
 
 namespace ExamSystem.Business.Abstract
 {
@@ -7,5 +8,7 @@ namespace ExamSystem.Business.Abstract
         Question GetById(int id);
         void Add(Question question);
         void Update(Question question);
+        List<Question> GetAll();
+        List<int> GetAllIds();
     }
 }

@@ -7,5 +7,6 @@ namespace ExamSystem.Business.Abstract
     {
         List<Lecture> GetAll();
         Lecture GetById(int id);
+        void Add(Lecture lecture);
     }
 }

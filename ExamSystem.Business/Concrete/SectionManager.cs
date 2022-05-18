@@ -23,5 +23,10 @@ namespace ExamSystem.Business.Concrete
         {
             return _sectionDal.GetAll(p => p.UnitID == id);
         }
+
+        public void Add(Section section)
+        {
+            _sectionDal.Add(section);
+        }
     }
 }

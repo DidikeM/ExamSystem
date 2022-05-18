@@ -105,6 +105,12 @@
     <Compile Include="Forms\ExaminerForms\FrmExaminerQuestionAdd.Designer.cs">
       <DependentUpon>FrmExaminerQuestionAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExaminerForms\FrmExaminerSectionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExaminerForms\FrmExaminerSectionAdd.Designer.cs">
+      <DependentUpon>FrmExaminerSectionAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     <Compile Include="Forms\FrmQuestionView.Designer.cs">
       <DependentUpon>FrmQuestionView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentForms\FrmStudentExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentForms\FrmStudentExam.Designer.cs">
+      <DependentUpon>FrmStudentExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ExaminerForms\FrmExaminerMain.resx">
@@ -125,11 +137,17 @@
     <EmbeddedResource Include="Forms\ExaminerForms\FrmExaminerQuestionAdd.resx">
       <DependentUpon>FrmExaminerQuestionAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExaminerForms\FrmExaminerSectionAdd.resx">
+      <DependentUpon>FrmExaminerSectionAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmQuestionView.resx">
       <DependentUpon>FrmQuestionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentForms\FrmStudentExam.resx">
+      <DependentUpon>FrmStudentExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

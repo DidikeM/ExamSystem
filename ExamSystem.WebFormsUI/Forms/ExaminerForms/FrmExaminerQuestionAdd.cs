@@ -105,8 +105,23 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
                 return;
             }
 
-            MessageBox.Show("Çalıştı");
             SaveQuestionDatabase();
+            ClearTextes();
+        }
+
+        private void ClearTextes()
+        {
+            _ChoiceFlag = -1;
+            ClearChoicesColor();
+            txtChoiceA.Text = " ";
+            txtChoiceB.Text = " ";
+            txtChoiceC.Text = " ";
+            txtChoiceD.Text = " ";
+            imgChoiceA.Image = null;
+            imgChoiceB.Image = null;
+            imgChoiceB.Image = null;
+            imgChoiceB.Image = null;
+            rtbQuestion.Text = "";
         }
 
         private void SaveQuestionDatabase()

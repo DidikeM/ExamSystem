@@ -29,9 +29,9 @@ namespace ExamSystem.WebFormsUI.Forms
 
         public Choice SelectedChoice { get; private set; }
 
-        public FrmQuestionView(int questionId)
+        public FrmQuestionView(Question question /*int questionId*/)
         {
-            _question = _questionService.GetById(questionId);
+            _question = question;
             _choices = _choiceService.GetByQuestionId(_question.ID);
             InitializeComponent();
         }

@@ -7,5 +7,6 @@ namespace ExamSystem.Business.Abstract
     {
         Section GetById(int Id);
         List<Section> GetByUnitId(int ıD);
+        void Add(Section section);
     }
 }

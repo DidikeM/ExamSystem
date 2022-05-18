@@ -1,4 +1,5 @@
-﻿using ExamSystem.Business.Abstract;
+﻿using System.Collections.Generic;
+using ExamSystem.Business.Abstract;
 using ExamSystem.DataAccess.Abstract;
 using ExamSystem.Entities.Concrete;
 
@@ -26,6 +27,16 @@ namespace ExamSystem.Business.Concrete
         public void Update(Question question)
         {
             _questionDal.Update(question);
+        }
+
+        public List<Question> GetAll()
+        {
+            return _questionDal.GetAll();
+        }
+
+        public List<int> GetAllIds()
+        {
+            return _questionDal.GetSelectedAll(p => p.ID);
         }
     }
 }

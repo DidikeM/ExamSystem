@@ -23,5 +23,10 @@ namespace ExamSystem.Business.Concrete
         {
             return _unitDal.GetAll(p => p.LectureID == id);
         }
+
+        public void Add(Unit unit)
+        {
+            _unitDal.Add(unit);
+        }
     }
 }
