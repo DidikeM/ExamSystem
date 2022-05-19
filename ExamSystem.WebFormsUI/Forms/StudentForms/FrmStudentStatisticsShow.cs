@@ -35,8 +35,8 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
 
         private void FrmStudentStatisticsShow_Load(object sender, EventArgs e)
         {
-            _studentStatisticsList = _studentStatisticsService.GetByStudentId(_student.ID);
-            foreach (var studentStatistics in _studentStatisticsList)
+            _studentStatisticsList = _studentStatisticsService.GetByStudentId(_student.ID);//konu istatistiklerini Databaseden çeker
+            foreach (var studentStatistics in _studentStatisticsList)//çekilen istatisliklerin olduğu konuları listeler
             {
                 Section section = _sectionService.GetById(studentStatistics.SectionID);
 
@@ -46,7 +46,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
                 }
             }
 
-            foreach (var section in _sections)
+            foreach (var section in _sections)//konuların olduğu üniteleri listeler
             {
                 Unit unit = _unitService.GetById(section.UnitID);
                 if (!(_units.Any(p => p.ID == unit.ID)))
@@ -55,7 +55,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
                 }
             }
 
-            foreach (var unit in _units)
+            foreach (var unit in _units)//ünitelerin olduğu dersleri listeler
             {
                 Lecture lecture = _lectureService.GetById(unit.LectureID);
                 if (!(_lectures.Any(p => p.ID == lecture.ID)))
@@ -65,7 +65,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             }
 
             string str = "";
-            foreach (var lecture in _lectures)
+            foreach (var lecture in _lectures)// analız stringini oluşturur
             {
                 str += lecture.Name + " Dersinden;\n";
                 foreach (var unit in _units)
@@ -90,7 +90,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             rtbStatistics.Text = str;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)//raporu  bilgisayara kaydeder
         {
             sfdSaveStatistics.ShowDialog();
             rtbStatistics.SaveFile(sfdSaveStatistics.FileName+".rtf");

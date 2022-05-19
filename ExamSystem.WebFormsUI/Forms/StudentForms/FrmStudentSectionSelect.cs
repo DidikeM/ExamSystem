@@ -39,10 +39,10 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             LoadLecture();
         }
 
-        private void GetSection()
+        private void GetSection()// öğrencinin %50 den fazla başarısız olduğu konuları üniteleri ve dersleri getirir
         {
             _studentStatisticsList = _studentStatisticsService.GetByStudentId(_student.ID);
-            foreach (var studentStatistics in _studentStatisticsList)
+            foreach (var studentStatistics in _studentStatisticsList)//öğrencinin başarısız olduğu konuları database den çekr
             {
                 if (!(studentStatistics.TrueCount / studentStatistics.FalseCount > 1))
                 {
@@ -54,7 +54,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
                 }
             }
 
-            foreach (var section in _sections)
+            foreach (var section in _sections)// öğrencinin başarısız olduğu konuların ünitelerini databaseden çeker
             {
                 Unit unit = _unitService.GetById(section.UnitID);
                 if (!(_units.Any(p => p.ID == unit.ID)))
@@ -63,7 +63,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
                 }
             }
 
-            foreach (var unit in _units)
+            foreach (var unit in _units// öğrencinin başarısız olduğu konuların ünitelerin derslerini databaseden çeker
             {
                 Lecture lecture = _lectureService.GetById(unit.LectureID);
                 if (!(_lectures.Any(p => p.ID == lecture.ID)))
@@ -75,7 +75,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
 
         private void lueLecture_Properties_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            if (lueLecture.GetSelectedDataRow() != null)
+            if (lueLecture.GetSelectedDataRow() != null)// ders seçilmişse ünite açılır listesini yükler
             {
                 LoadUnit();
             }
@@ -83,7 +83,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
 
         private void lueUnit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            if (lueUnit.GetSelectedDataRow() != null)
+            if (lueUnit.GetSelectedDataRow() != null)//ünite seçilmişse konu açılır listesini yükler
             {
                 LoadSection();
             }
@@ -91,20 +91,22 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
 
         private void LoadLecture()
         {
-            lueLecture.Properties.DataSource = _lectures;
+            lueLecture.Properties.DataSource = _lectures;// ders açılır listesini yükler
         }
 
         private void LoadUnit()
         {
+            //ünite açılır listesini yükler
             lueUnit.Properties.DataSource = _units.Where(p => p.LectureID == ((Lecture)lueLecture.GetSelectedDataRow()).ID);
         }
 
         private void LoadSection()
         {
+            //Konu açılır listesini yükler
             lueSection.Properties.DataSource = _sections.Where(p => p.UnitID == ((Unit)lueUnit.GetSelectedDataRow()).ID);
         }
 
-        private void btnStartExam_Click(object sender, EventArgs e)
+        private void btnStartExam_Click(object sender, EventArgs e)//seçilen başarısız konu için sınav başlatır
         {
             if (lueSection.GetSelectedDataRow() != null)
             {

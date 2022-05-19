@@ -25,7 +25,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             InitializeComponent();
         }
 
-        private void FrmStudentTimeIntervalChange_Load(object sender, EventArgs e)
+        private void FrmStudentTimeIntervalChange_Load(object sender, EventArgs e)//öğrencinin zaman aralıklarını ekrana yükler
         {
             _timeInterval = _timeIntervalService.GetById(_student.TimeIntervalID);
             txtInterval1.Text = _timeInterval.Interval1.ToString();
@@ -36,7 +36,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             txtInterval6.Text = _timeInterval.Interval6.ToString();
         }
 
-        private void btnChange_Click(object sender, EventArgs e)
+        private void btnChange_Click(object sender, EventArgs e)//öğrencinin yazdığı zaman aralığını sisteme kaydeder
         {
             _timeInterval.Interval1 = Convert.ToInt32(txtInterval1.Text);
             _timeInterval.Interval2 = Convert.ToInt32(txtInterval2.Text);

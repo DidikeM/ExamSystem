@@ -39,7 +39,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             OpenQuestion();
         }
 
-        private void GetRandomQuestions(int count)
+        private void GetRandomQuestions(int count) //Seçilen eksik konudan count kadar soruyu sınava ekler
         {
 
             if (_questions.Count < count)
@@ -55,7 +55,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             }
         }
 
-        private void OpenQuestion()
+        private void OpenQuestion() //sıradaki soruyu ekrana getirir
         {
             CloseQuestion();
             _frmQuestionView = new FrmQuestionView(_examQuestions[_questionCounter++]);
@@ -64,7 +64,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             lblQuestionNumber.Text = "Soru: " + _questionCounter + "/" + _examQuestions.Count;
         }
 
-        private void CloseQuestion()
+        private void CloseQuestion()// çocuk formları kapatır
         {
             foreach (var mdiChild in this.MdiChildren)
             {
@@ -82,18 +82,18 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
 
             if (_frmQuestionView.SelectedChoice.ID == _examQuestions[_questionCounter - 1].CorrectAnswer)
             {
-                _true++;
+                _true++;// işaretlenen şık doğruysa doğru sayısını arttırır
             }
             else
             {
-                _false++;
+                _false++;// işaretlenen şık yanlışsa yanlış sayısını arttırır
             }
 
-            if (_questionCounter < _examQuestions.Count)
+            if (_questionCounter < _examQuestions.Count)//sınav bitmemişse sıradaki soruyu açar
             {
                 OpenQuestion();
             }
-            else
+            else//sınav bitmişse formu kapatır
             {
                 CloseQuestion();
                 this.Close();

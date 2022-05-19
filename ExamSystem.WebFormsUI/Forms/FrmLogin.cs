@@ -25,19 +25,19 @@ namespace ExamSystem.WebFormsUI.Forms
             LoadUserTypes();
         }
 
-        private void btnShowRegister_Click(object sender, EventArgs e)
+        private void btnShowRegister_Click(object sender, EventArgs e)//kayıt ekranını getirir
         {
             pnlRegister.Visible = true;
             pnlLogin.Visible = false;
         }
 
-        private void btnShowLogin_Click(object sender, EventArgs e)
+        private void btnShowLogin_Click(object sender, EventArgs e)//giriş yapma ekranını getirir
         {
             pnlLogin.Visible = true;
             pnlRegister.Visible = false;
         }
 
-        private void LoadUserTypes()
+        private void LoadUserTypes()//suer type açılır listesine verileri çeker
         {
             lueRegisterUserType.Properties.DataSource = _userTypeService.GetNotAdminType();
             lueRegisterUserType.Properties.DisplayMember = "Name";
@@ -48,9 +48,10 @@ namespace ExamSystem.WebFormsUI.Forms
         {
             if (txtRegisterSurname.Text == "" || txtRegisterUsername.Text == "" || txtRegisterEmail.Text == "" || txtRegisterName.Text == "" || txtRegisterPassword.Text == "" || lueRegisterUserType.GetSelectedDataRow() == null)
             {
+                //boş bırakılan yer varsa kullanıcıyı uyarır
                 MessageBox.Show("Lütfen Bütün Alanları doldurunuz.");
             }
-            else
+            else//girilen bilgileri sisteme kaydeder
             {
                 User user = new User()
                 {
@@ -74,7 +75,7 @@ namespace ExamSystem.WebFormsUI.Forms
             }
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)//girilen kullanıcının tipine karar verir ve tipe göre main ekranlarını açar
         {
 
             if (txtLoginUsername.Text == "" || txtLoginPassword.Text == "")
@@ -95,12 +96,12 @@ namespace ExamSystem.WebFormsUI.Forms
                         case 1:
 
                             break;
-                        case 2:
+                        case 2:// sınav sorumlusu ekranını açar
                             FrmExaminerMain frmExaminerMain = new FrmExaminerMain(user);
                             frmExaminerMain.Show();
                             this.Hide();
                             break;
-                        case 3:
+                        case 3://öğrenci ekranını açar
                             FrmStudentMain frmStudentMain = new FrmStudentMain(user);
                             frmStudentMain.Show();
                             this.Hide();

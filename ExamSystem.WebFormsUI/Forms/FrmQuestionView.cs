@@ -43,12 +43,12 @@ namespace ExamSystem.WebFormsUI.Forms
             LoadChoices();
         }
 
-        private void LoadQuestion()
+        private void LoadQuestion()//gelen sorunun metnini ekrana açar
         {
             rtbQuestion.LoadDocument(Environment.ExpandEnvironmentVariables(_question.FilePath));
         }
 
-        private void LoadTitle()
+        private void LoadTitle()// gelen sorunun başlığını oluşturur
         {
             Section section = _sectionService.GetById(_question.SectionID);
             lblSectionNumberValue.Text = section.Number.ToString();
@@ -63,7 +63,7 @@ namespace ExamSystem.WebFormsUI.Forms
             lblLectureNameValue.Text = lecture.Name;
         }
 
-        private void LoadChoices()
+        private void LoadChoices()// şıkları türüne göre ekrana yazar
         {
             if (_question.ChoiceFormatID == 1 || _question.ChoiceFormatID == 3)
             {
@@ -81,7 +81,7 @@ namespace ExamSystem.WebFormsUI.Forms
             }
         }
 
-        private void ChoiceA_Click(object sender, EventArgs e)
+        private void ChoiceA_Click(object sender, EventArgs e)//a şıkkını seçer
         {
             ClearChoicesColor();
             lblChoiceA.BackColor = Color.Aquamarine;
@@ -89,7 +89,7 @@ namespace ExamSystem.WebFormsUI.Forms
             SelectedChoice = _choices[_flagChoice];
         }
 
-        private void ChoiceB_Click(object sender, EventArgs e)
+        private void ChoiceB_Click(object sender, EventArgs e)//b şıkkını seçer
         {
             ClearChoicesColor();
             lblChoiceB.BackColor = Color.Aquamarine;
@@ -97,7 +97,7 @@ namespace ExamSystem.WebFormsUI.Forms
             SelectedChoice = _choices[_flagChoice];
         }
 
-        private void ChoiceC_Click(object sender, EventArgs e)
+        private void ChoiceC_Click(object sender, EventArgs e)//c şıkkını seçer
         {
             ClearChoicesColor();
             lblChoiceC.BackColor = Color.Aquamarine;
@@ -105,7 +105,7 @@ namespace ExamSystem.WebFormsUI.Forms
             SelectedChoice = _choices[_flagChoice];
         }
 
-        private void ChoiceD_Click(object sender, EventArgs e)
+        private void ChoiceD_Click(object sender, EventArgs e)//d şıkkını seçer
         {
             ClearChoicesColor();
             lblChoiceD.BackColor = Color.Aquamarine;
@@ -113,7 +113,7 @@ namespace ExamSystem.WebFormsUI.Forms
             SelectedChoice = _choices[_flagChoice];
         }
 
-        private void ClearChoicesColor()
+        private void ClearChoicesColor()// şıkları temizler
         {
             lblChoiceA.BackColor = Color.Transparent;
             lblChoiceB.BackColor = Color.Transparent;
