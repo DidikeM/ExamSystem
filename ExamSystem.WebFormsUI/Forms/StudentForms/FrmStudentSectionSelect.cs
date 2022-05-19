@@ -63,7 +63,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
                 }
             }
 
-            foreach (var unit in _units// öğrencinin başarısız olduğu konuların ünitelerin derslerini databaseden çeker
+            foreach (var unit in _units)// öğrencinin başarısız olduğu konuların ünitelerin derslerini databaseden çeker
             {
                 Lecture lecture = _lectureService.GetById(unit.LectureID);
                 if (!(_lectures.Any(p => p.ID == lecture.ID)))
