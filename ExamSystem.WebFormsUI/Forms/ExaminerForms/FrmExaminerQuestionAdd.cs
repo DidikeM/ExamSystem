@@ -120,8 +120,8 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             txtChoiceD.Text = " ";
             imgChoiceA.Image = null;
             imgChoiceB.Image = null;
-            imgChoiceB.Image = null;
-            imgChoiceB.Image = null;
+            imgChoiceC.Image = null;
+            imgChoiceD.Image = null;
             rtbQuestion.Text = "";
         }
 
