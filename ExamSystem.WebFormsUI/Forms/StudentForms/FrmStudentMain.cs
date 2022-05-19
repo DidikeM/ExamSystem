@@ -29,7 +29,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             Application.Exit();
         }
 
-        private void barBtnExamStart_ItemClick(object sender, ItemClickEventArgs e)
+        private void barBtnExamStart_ItemClick(object sender, ItemClickEventArgs e)//Buttona tıklandığında bu formu gizler gerekli formu açar
         {
             FrmStudentExam frmStudentExam = new FrmStudentExam(_student);
             this.Hide();
@@ -37,7 +37,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             this.Show();
         }
 
-        private void barBtnChangeTimeInterval_ItemClick(object sender, ItemClickEventArgs e)
+        private void barBtnChangeTimeInterval_ItemClick(object sender, ItemClickEventArgs e)//Buttona tıklandığında gerekli formu çocuk form olarak açar
         {
             CloseChild();
             FrmStudentTimeIntervalChange frmStudentTimeIntervalChange = new FrmStudentTimeIntervalChange(_student);
@@ -45,7 +45,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             frmStudentTimeIntervalChange.Show();
         }
 
-        private void barBtnShowStatistics_ItemClick(object sender, ItemClickEventArgs e)
+        private void barBtnShowStatistics_ItemClick(object sender, ItemClickEventArgs e)//Buttona tıklandığında gerekli formu çocuk form olarak açar
         {
             CloseChild();
             FrmStudentStatisticsShow frmStudentStatisticsShow = new FrmStudentStatisticsShow(_student);
@@ -53,7 +53,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             frmStudentStatisticsShow.Show();
         }
 
-        private void barBtnSectionExam_ItemClick(object sender, ItemClickEventArgs e)
+        private void barBtnSectionExam_ItemClick(object sender, ItemClickEventArgs e)//Buttona tıklandığında gerekli formu çocuk form olarak açar
         {
             CloseChild();
             FrmStudentSectionSelect frmStudentSectionExam = new FrmStudentSectionSelect(_student);

@@ -24,7 +24,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             Application.Exit();
         }
 
-        private void barBtnSectionAdd_ItemClick(object sender, ItemClickEventArgs e)
+        private void barBtnSectionAdd_ItemClick(object sender, ItemClickEventArgs e)//Buttona tıklandığında gerekli formu çocuk form olarak açar
         {
             CloseChild();
             FrmExaminerSectionAdd frmExaminerSectionAdd = new FrmExaminerSectionAdd();
@@ -32,7 +32,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             frmExaminerSectionAdd.Show();
         }
 
-        private void barBtnQuestionAdd_ItemClick(object sender, ItemClickEventArgs e)
+        private void barBtnQuestionAdd_ItemClick(object sender, ItemClickEventArgs e)//Buttona tıklandığında gerekli formu çocuk form olarak açar
         {
             CloseChild();
             FrmExaminerQuestionAdd frmExaminerQuestionAdd = new FrmExaminerQuestionAdd();
@@ -40,7 +40,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             frmExaminerQuestionAdd.Show();
         }
 
-        private void CloseChild()
+        private void CloseChild()//çocuk formları kapatır
         {
             foreach (var mdiChild in this.MdiChildren)
             {

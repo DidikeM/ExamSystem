@@ -20,6 +20,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
         private IChoiceFormatService _choiceFormatService = InstanceFactory.GetInstance<IChoiceFormatService>();
         private IQuestionService _questionService = InstanceFactory.GetInstance<IQuestionService>();
         private IChoiceService _choiceService = InstanceFactory.GetInstance<IChoiceService>();
+
         private int _ChoiceFlag = -1;
 
         public FrmExaminerQuestionAdd()
@@ -27,7 +28,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             InitializeComponent();
         }
 
-        private void rtbQuestion_PopupMenuShowing(object sender, DevExpress.XtraRichEdit.PopupMenuShowingEventArgs e)
+        private void rtbQuestion_PopupMenuShowing(object sender, DevExpress.XtraRichEdit.PopupMenuShowingEventArgs e)//Soru ekleme kısmının bağlam menüsünü düzenler
         {
             e.Menu.RemoveMenuItem(RichEditCommandId.CreateHyperlink);
             e.Menu.RemoveMenuItem(RichEditCommandId.CreateBookmark);
@@ -36,29 +37,29 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
 
         private void FrmExaminerQuestionAdd_Load(object sender, EventArgs e)
         {
-            lueLecture.Properties.DataSource = _lectureService.GetAll();
-            lueChoiceFormat.Properties.DataSource = _choiceFormatService.GetAll();
+            lueLecture.Properties.DataSource = _lectureService.GetAll(); //Açılır listeye veri tabanından elemanları getirir
+            lueChoiceFormat.Properties.DataSource = _choiceFormatService.GetAll(); //Açılır listeye veri tabanından elemanları getirir
         }
 
         private void lueLecture_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            if (e.CloseMode == PopupCloseMode.Normal)
+            if (lueLecture.GetSelectedDataRow() != null) //açılır listede elaman seçilip seçilmediğini kontrol eder
             {
-                lueUnit.Properties.DataSource = _unitService.GetByLectureId(((Lecture)lueLecture.GetSelectedDataRow()).ID);
+                lueUnit.Properties.DataSource = _unitService.GetByLectureId(((Lecture)lueLecture.GetSelectedDataRow()).ID);// diğer açılır listede seçilen elemana göre Açılır listeye veri tabanından elemanları getirir
             }
         }
 
         private void lueUnit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            if (e.CloseMode == PopupCloseMode.Normal)
+            if (lueUnit.GetSelectedDataRow() != null)//açılır listede elaman seçilip seçilmediğini kontrol eder
             {
-                lueSection.Properties.DataSource = _sectionService.GetByUnitId(((Unit)lueUnit.GetSelectedDataRow()).ID);
+                lueSection.Properties.DataSource = _sectionService.GetByUnitId(((Unit)lueUnit.GetSelectedDataRow()).ID);// diğer açılır listede seçilen elemana göre Açılır listeye veri tabanından elemanları getirir
             }
         }
 
         private void lueChoiceFormat_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            if (e.CloseMode == PopupCloseMode.Normal)
+            if (lueChoiceFormat.GetSelectedDataRow() != null) //şık türüne göre gerekli alanları gösterir gereksiz alanları gizler
             {
                 if (((ChoiceFormat)lueChoiceFormat.GetSelectedDataRow()).ID == 2)
                 {
@@ -73,7 +74,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             }
         }
 
-        private void btnSaveQuestion_Click(object sender, EventArgs e)
+        private void btnSaveQuestion_Click(object sender, EventArgs e)// herhangi bir eksik yoksa soruyu database kaydeder
         {
             if (lueSection.GetSelectedDataRow() == null)
             {
@@ -109,7 +110,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             ClearTextes();
         }
 
-        private void ClearTextes()
+        private void ClearTextes()//TextBoxları temizler
         {
             _ChoiceFlag = -1;
             ClearChoicesColor();
@@ -124,7 +125,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             rtbQuestion.Text = "";
         }
 
-        private void SaveQuestionDatabase()
+        private void SaveQuestionDatabase() //gerekli alanlardaki değerleri alıp soruyu ve şıkları database kaydeder
         {
             Question question = new Question()
             {
@@ -135,8 +136,6 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
                 CorrectAnswer = 1
             };
             _questionService.Add(question);
-            rtbQuestion.SaveDocument(Environment.ExpandEnvironmentVariables("%userprofile%\\ExamSystem\\Questions\\" + question.ID + ".rtf"), DocumentFormat.Rtf);
-            question.FilePath = "%userprofile%\\ExamSystem\\Questions\\" + question.ID + ".rtf";
 
             List<Choice> choices = new List<Choice>()
             {
@@ -191,39 +190,42 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
                     _choiceService.Update(choices[i]);
                 }
             }
+
+            rtbQuestion.SaveDocument(Environment.ExpandEnvironmentVariables("%userprofile%\\ExamSystem\\Questions\\" + question.ID + ".rtf"), DocumentFormat.Rtf);
+            question.FilePath = "%userprofile%\\ExamSystem\\Questions\\" + question.ID + ".rtf";
             question.CorrectAnswer = choices[_ChoiceFlag].ID;
             _questionService.Update(question);
         }
 
-        private void lblChoiceA_Click(object sender, EventArgs e)
+        private void lblChoiceA_Click(object sender, EventArgs e) //a şıkkına tıklandığında çalışan fonksiyon
         {
             ClearChoicesColor();
             lblChoiceA.BackColor = Color.Aquamarine;
             _ChoiceFlag = 0;
         }
 
-        private void lblChoiceB_Click(object sender, EventArgs e)
+        private void lblChoiceB_Click(object sender, EventArgs e)//b şıkkına tıklandığında çalışan fonksiyon
         {
             ClearChoicesColor();
             lblChoiceB.BackColor = Color.Aquamarine;
             _ChoiceFlag = 1;
         }
 
-        private void lblChoiceC_Click(object sender, EventArgs e)
+        private void lblChoiceC_Click(object sender, EventArgs e)//c şıkkına tıklandığında çalışan fonksiyon
         {
             ClearChoicesColor();
             lblChoiceC.BackColor = Color.Aquamarine;
             _ChoiceFlag = 2;
         }
 
-        private void lblChoiceD_Click(object sender, EventArgs e)
+        private void lblChoiceD_Click(object sender, EventArgs e)//d şıkkına tıklandığında çalışan fonksiyon
         {
             ClearChoicesColor();
             lblChoiceD.BackColor = Color.Aquamarine;
             _ChoiceFlag = 3;
         }
 
-        private void ClearChoicesColor()
+        private void ClearChoicesColor()// şıkların rengini temizler
         {
             lblChoiceA.BackColor = Color.Transparent;
             lblChoiceB.BackColor = Color.Transparent;

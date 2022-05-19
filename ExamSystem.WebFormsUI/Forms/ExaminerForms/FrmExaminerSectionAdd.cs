@@ -19,6 +19,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
         private ILectureService _lectureService = InstanceFactory.GetInstance<ILectureService>();
         private IUnitService _unitService = InstanceFactory.GetInstance<IUnitService>();
         private ISectionService _sectionService = InstanceFactory.GetInstance<ISectionService>();
+
         public FrmExaminerSectionAdd()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
 
         private void lueLecture_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            if (e.CloseMode == PopupCloseMode.Normal)
+            if (lueLecture.GetSelectedDataRow() != null)
             {
                 LoadUnit();
             }
@@ -39,28 +40,28 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
 
         private void lueUnit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            if (e.CloseMode == PopupCloseMode.Normal)
+            if (lueUnit.GetSelectedDataRow() != null)
             {
                 LoadSection();
             }
         }
 
-        private void LoadSection()
+        private void LoadSection()//açılır listeye veri tabanından elemanları çeker
         {
             lueSection.Properties.DataSource = _sectionService.GetByUnitId(((Unit)lueUnit.GetSelectedDataRow()).ID);
         }
 
-        private void LoadLecture()
+        private void LoadLecture()//açılır listeye veri tabanından elemanları çeker
         {
             lueLecture.Properties.DataSource = _lectureService.GetAll();
         }
 
-        private void LoadUnit()
+        private void LoadUnit()//açılır listeye veri tabanından elemanları çeker
         {
             lueUnit.Properties.DataSource = _unitService.GetByLectureId(((Lecture)lueLecture.GetSelectedDataRow()).ID);
         }
 
-        private void btnLectureAdd_Click(object sender, EventArgs e)
+        private void btnLectureAdd_Click(object sender, EventArgs e)//Gerekli alanları kontrol eder ve dersi sisteme ekler
         {
             if (txtEditGradeNumber.Text == "" || txtEditLectureName.Text == "")
             {
@@ -68,7 +69,6 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             }
             else
             {
-
                 _lectureService.Add(new Lecture()
                 {
                     GradeNumber = Convert.ToInt32(txtEditGradeNumber.Text),
@@ -79,7 +79,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             }
         }
 
-        private void btnUnitAdd_Click(object sender, EventArgs e)
+        private void btnUnitAdd_Click(object sender, EventArgs e)//Gerekli alanları kontrol eder ve üniteyi sisteme ekler
         {
             if (lueLecture.GetSelectedDataRow() == null)
             {
@@ -105,7 +105,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             }
         }
 
-        private void btnSectionAdd_Click(object sender, EventArgs e)
+        private void btnSectionAdd_Click(object sender, EventArgs e)//Gerekli alanları kontrol eder ve konuyu sisteme ekler
         {
             if (lueUnit.GetSelectedDataRow() == null)
             {
@@ -131,7 +131,7 @@ namespace ExamSystem.WebFormsUI.Forms.ExaminerForms
             }
         }
 
-        private void ClearValues()
+        private void ClearValues()//textboxları temizler
         {
             txtEditLectureName.Text = "";
             txtEditUnitNumber.Text = "";

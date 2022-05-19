@@ -20,15 +20,14 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
         private readonly List<StudentStatus> _studentStatusList;
         private readonly List<Question> _examQuestions = new List<Question>();
         private int _questionCounter = 0;
+        private TimeSpan _examTimeSpan;
 
         public FrmStudentExam(Student student)
         {
             _student = student;
-            _studentStatusList = _studentStatusService.GetByStudentId(student.ID);
+            _studentStatusList = _studentStatusService.GetByStudentId(student.ID); //Öğrencinin daha önceki çözdüğü soruların durumlarını database den çeker
             InitializeComponent();
         }
-
-        private TimeSpan _examTimeSpan;
 
         private void FrmStudentExam_Load(object sender, EventArgs e)
         {
@@ -40,13 +39,14 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             TimerStart();
         }
 
-        private void GetRandomQuestions(int count)
+        private void GetRandomQuestions(int count)// sınav sorularına count kadar soru ekler
         {
-            List<int> questionIds = _questionService.GetAllIds();
+            List<int> questionIds = _questionService.GetAllIds();//sistemdeki soruların idlerini getirir
             //_questionIds = _questionIds.Where(p => !(_examQuestions.Any(q => q.ID == p))).ToList();
+            //daha önce doğru olarak çözülen soruları tüm havuzdan çıkartır
             questionIds = questionIds.Where(p => !(_studentStatusList.Any(q => q.QuestionID == p && q.Status != 0))).ToList();
             Random random = new Random();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++)//çözülmemiş veya yanlış çözülmüş soru havuzundan rastgele soruları sınav sorularına ekler
             {
                 int x = random.Next(0, questionIds.Count - 1);
                 _examQuestions.Add(_questionService.GetById(questionIds[x]));
@@ -54,7 +54,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             }
         }
 
-        private void GetSigmaQuestions()
+        private void GetSigmaQuestions()// 6 sigma prensibinin gereksinimi olan; daha önce doğru çözülmüş ve zamanı gelmiş soruları sınav sorularına ekler
         {
             TimeInterval timeInterval = _timeIntervalService.GetById(_student.TimeIntervalID);
             List<int> intervals = new List<int>()
@@ -75,7 +75,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             }
         }
 
-        private void OpenQuestion()
+        private void OpenQuestion()//sınav sorularındaki sıradaki soruyu ekrana getirir
         {
             CloseQuestion();
             _frmQuestionView = new FrmQuestionView(_examQuestions[_questionCounter++]);
@@ -84,7 +84,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             lblQuestionNumber.Text = "Soru: " + _questionCounter + "/" + _examQuestions.Count;
         }
 
-        private void CloseQuestion()
+        private void CloseQuestion()// çocuk formları kapatır
         {
             foreach (var mdiChild in this.MdiChildren)
             {
@@ -92,19 +92,23 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             }
         }
 
-        private void TimerStart()
+        private void TimerStart()// timer ı başlatır
         {
             _examTimeSpan = new TimeSpan(0, _examQuestions.Count, 0);
             timerExam.Start();
         }
 
-        private void timerExam_Tick(object sender, EventArgs e)
+        private void timerExam_Tick(object sender, EventArgs e)//kalan süreyi ekrana yazar
         {
             _examTimeSpan -= TimeSpan.FromSeconds(1);
             lblCounter.Text = _examTimeSpan.ToString();
+            if (_examTimeSpan.TotalSeconds < 0)
+            {
+                this.Close();
+            }
         }
 
-        private void btnNextQuestion_Click(object sender, EventArgs e)
+        private void btnNextQuestion_Click(object sender, EventArgs e)//işaretlenen şıkka göre gerekli database işlemleri yapar ve sıradaki soruyu getirir veya formu kapatır
         {
             if (_frmQuestionView.SelectedChoice == null)
             {
@@ -113,6 +117,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             }
 
             StudentStatus studentStatus = _studentStatusService.GetByStudentIdAndQuestionId(_student.ID, _examQuestions[_questionCounter - 1].ID);
+            //6 sigma için gerekli veriyi database den çeker. yoksa yeni nesne oluşturur
             if (studentStatus == null)
             {
                 studentStatus = new StudentStatus()
@@ -126,6 +131,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             }
 
             StudentStatistics studentStatistics = _studentStatisticsService.GetByStudentIdAndSectionId(_student.ID, _examQuestions[_questionCounter - 1].SectionID);
+            //analiz için gerekli veriyi database den çeker. yoksa yeni nesne oluşturur
             if (studentStatistics == null)
             {
                 studentStatistics = new StudentStatistics()
@@ -155,7 +161,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             _studentStatusService.Update(studentStatus);
             _studentStatisticsService.Update(studentStatistics);
 
-            if (_questionCounter < _examQuestions.Count)
+            if (_questionCounter < _examQuestions.Count)// sorular bittiyse sınav ekranını kapatır bitmediyse sıradaki soruyu getirir
             {
                 OpenQuestion();
             }
