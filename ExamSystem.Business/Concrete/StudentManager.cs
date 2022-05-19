@@ -22,5 +22,10 @@ namespace ExamSystem.Business.Concrete
         {
             return _studentDal.Get(p => p.ID == id);
         }
+
+        public Student GetByUserId(int userId)
+        {
+            return _studentDal.Get(p => p.UserID == userId);
+        }
     }
 }

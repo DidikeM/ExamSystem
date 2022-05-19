@@ -61,6 +61,7 @@
     <Compile Include="Abstract\IQuestionDal.cs" />
     <Compile Include="Abstract\ISectionDal.cs" />
     <Compile Include="Abstract\IStudentDal.cs" />
+    <Compile Include="Abstract\IStudentStatisticsDal.cs" />
     <Compile Include="Abstract\IStudentStatusDal.cs" />
     <Compile Include="Abstract\ITimeIntervalDal.cs" />
     <Compile Include="Abstract\IUnitDal.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Concrete\EntityFramework\EfQuestionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSectionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfStudentDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfStudentStatisticsDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfStudentStatusDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfTimeIntervalDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUnitDal.cs" />

@@ -38,5 +38,10 @@ namespace ExamSystem.Business.Concrete
         {
             return _questionDal.GetSelectedAll(p => p.ID);
         }
+
+        public List<Question> GetBySectionId(int sectionId)
+        {
+            return _questionDal.GetAll(p => p.SectionID == sectionId);
+        }
     }
 }

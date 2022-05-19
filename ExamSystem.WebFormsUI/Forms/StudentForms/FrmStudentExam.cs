@@ -13,6 +13,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
         private readonly IQuestionService _questionService = InstanceFactory.GetInstance<IQuestionService>();
         private readonly IStudentStatusService _studentStatusService = InstanceFactory.GetInstance<IStudentStatusService>();
         private readonly ITimeIntervalService _timeIntervalService = InstanceFactory.GetInstance<ITimeIntervalService>();
+        private readonly IStudentStatisticsService _studentStatisticsService = InstanceFactory.GetInstance<IStudentStatisticsService>();
 
         private FrmQuestionView _frmQuestionView;
         private readonly Student _student;
@@ -67,7 +68,7 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
             };
             foreach (var studentStatus in _studentStatusList)
             {
-                if (studentStatus.Status > 0&&(DateTime.Today - studentStatus.FirstTime) >= TimeSpan.FromDays(Convert.ToDouble(intervals[studentStatus.Status - 1])))
+                if (studentStatus.Status > 0 && (DateTime.Today - studentStatus.FirstTime) >= TimeSpan.FromDays(Convert.ToDouble(intervals[studentStatus.Status - 1])))
                 {
                     _examQuestions.Add(_questionService.GetById(studentStatus.QuestionID));
                 }
@@ -105,11 +106,12 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
 
         private void btnNextQuestion_Click(object sender, EventArgs e)
         {
-            if (_frmQuestionView.SelectedChoice== null)
+            if (_frmQuestionView.SelectedChoice == null)
             {
                 MessageBox.Show("Lütfen bir şık işaretleyiniz");
                 return;
             }
+
             StudentStatus studentStatus = _studentStatusService.GetByStudentIdAndQuestionId(_student.ID, _examQuestions[_questionCounter - 1].ID);
             if (studentStatus == null)
             {
@@ -123,6 +125,19 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
                 _studentStatusService.Add(studentStatus);
             }
 
+            StudentStatistics studentStatistics = _studentStatisticsService.GetByStudentIdAndSectionId(_student.ID, _examQuestions[_questionCounter - 1].SectionID);
+            if (studentStatistics == null)
+            {
+                studentStatistics = new StudentStatistics()
+                {
+                    StudentID = _student.ID,
+                    SectionID = _examQuestions[_questionCounter - 1].SectionID,
+                    TrueCount = 0,
+                    FalseCount = 0
+                };
+                _studentStatisticsService.Add(studentStatistics);
+            }
+
             if (_frmQuestionView.SelectedChoice.ID == _examQuestions[_questionCounter - 1].CorrectAnswer)
             {
                 if (studentStatus.Status == 0)
@@ -130,12 +145,15 @@ namespace ExamSystem.WebFormsUI.Forms.StudentForms
                     studentStatus.FirstTime = DateTime.Today;
                 }
                 studentStatus.Status++;
+                studentStatistics.TrueCount++;
             }
             else
             {
                 studentStatus.Status = 0;
+                studentStatistics.FalseCount++;
             }
             _studentStatusService.Update(studentStatus);
+            _studentStatisticsService.Update(studentStatistics);
 
             if (_questionCounter < _examQuestions.Count)
             {

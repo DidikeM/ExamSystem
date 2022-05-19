@@ -10,5 +10,6 @@ namespace ExamSystem.Business.Abstract
         void Update(Question question);
         List<Question> GetAll();
         List<int> GetAllIds();
+        List<Question> GetBySectionId(int sectionId);
     }
 }

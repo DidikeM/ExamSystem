@@ -99,7 +99,7 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             this.btnShowLogin.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnShowLogin.Appearance.Options.UseBackColor = true;
-            this.btnShowLogin.Location = new System.Drawing.Point(133, 293);
+            this.btnShowLogin.Location = new System.Drawing.Point(133, 332);
             this.btnShowLogin.Name = "btnShowLogin";
             this.btnShowLogin.Size = new System.Drawing.Size(120, 23);
             this.btnShowLogin.TabIndex = 15;
@@ -140,7 +140,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.btnRegister.Appearance.Options.UseBackColor = true;
             this.btnRegister.Appearance.Options.UseFont = true;
             this.btnRegister.Appearance.Options.UseForeColor = true;
-            this.btnRegister.Location = new System.Drawing.Point(133, 236);
+            this.btnRegister.Location = new System.Drawing.Point(133, 275);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(120, 23);
             this.btnRegister.TabIndex = 12;
@@ -149,14 +149,14 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             // txtRegisterEmail
             // 
-            this.txtRegisterEmail.Location = new System.Drawing.Point(133, 199);
+            this.txtRegisterEmail.Location = new System.Drawing.Point(133, 220);
             this.txtRegisterEmail.Name = "txtRegisterEmail";
             this.txtRegisterEmail.Size = new System.Drawing.Size(120, 22);
             this.txtRegisterEmail.TabIndex = 11;
             // 
             // lblRegisterEmail
             // 
-            this.lblRegisterEmail.Location = new System.Drawing.Point(45, 203);
+            this.lblRegisterEmail.Location = new System.Drawing.Point(45, 224);
             this.lblRegisterEmail.Name = "lblRegisterEmail";
             this.lblRegisterEmail.Size = new System.Drawing.Size(24, 13);
             this.lblRegisterEmail.TabIndex = 10;
@@ -164,14 +164,14 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             // txtRegisterSurname
             // 
-            this.txtRegisterSurname.Location = new System.Drawing.Point(133, 163);
+            this.txtRegisterSurname.Location = new System.Drawing.Point(133, 192);
             this.txtRegisterSurname.Name = "txtRegisterSurname";
             this.txtRegisterSurname.Size = new System.Drawing.Size(120, 22);
             this.txtRegisterSurname.TabIndex = 9;
             // 
             // lblregisterSurname
             // 
-            this.lblregisterSurname.Location = new System.Drawing.Point(45, 167);
+            this.lblregisterSurname.Location = new System.Drawing.Point(45, 196);
             this.lblregisterSurname.Name = "lblregisterSurname";
             this.lblregisterSurname.Size = new System.Drawing.Size(35, 13);
             this.lblregisterSurname.TabIndex = 8;
@@ -179,14 +179,14 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             // txtRegisterName
             // 
-            this.txtRegisterName.Location = new System.Drawing.Point(153, 164);
+            this.txtRegisterName.Location = new System.Drawing.Point(133, 164);
             this.txtRegisterName.Name = "txtRegisterName";
-            this.txtRegisterName.Size = new System.Drawing.Size(100, 22);
+            this.txtRegisterName.Size = new System.Drawing.Size(120, 22);
             this.txtRegisterName.TabIndex = 7;
             // 
             // lblRegisterName
             // 
-            this.lblRegisterName.Location = new System.Drawing.Point(45, 167);
+            this.lblRegisterName.Location = new System.Drawing.Point(45, 168);
             this.lblRegisterName.Name = "lblRegisterName";
             this.lblRegisterName.Size = new System.Drawing.Size(19, 13);
             this.lblRegisterName.TabIndex = 6;

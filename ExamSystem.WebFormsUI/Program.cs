@@ -23,6 +23,7 @@ namespace ExamSystem.WebFormsUI
             //Application.Run(new FrmQuestionView(6));
             //Application.Run(new FrmExaminerSectionAdd());
             //Application.Run((new FrmStudentExam()));
+            Application.Run(new FrmLogin());
         }
 
     }

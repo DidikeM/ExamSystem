@@ -51,6 +51,7 @@
     <Compile Include="Concrete\Question.cs" />
     <Compile Include="Concrete\Section.cs" />
     <Compile Include="Concrete\Student.cs" />
+    <Compile Include="Concrete\StudentStatistics.cs" />
     <Compile Include="Concrete\StudentStatus.cs" />
     <Compile Include="Concrete\TimeInterval.cs" />
     <Compile Include="Concrete\Unit.cs" />

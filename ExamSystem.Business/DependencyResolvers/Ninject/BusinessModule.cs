@@ -37,6 +37,9 @@ namespace ExamSystem.Business.DependencyResolvers.Ninject
             Bind<IStudentService>().To<StudentManager>().InSingletonScope();
             Bind<IStudentDal>().To<EfStudentDal>().InSingletonScope();
 
+            Bind<IStudentStatisticsService>().To<StudentStatisticsManager>();
+            Bind<IStudentStatisticsDal>().To<EfStudentStatisticsDal>();
+
             Bind<IStudentStatusService>().To<StudentStatusManager>().InSingletonScope();
             Bind<IStudentStatusDal>().To<EfStudentStatusDal>().InSingletonScope();
 

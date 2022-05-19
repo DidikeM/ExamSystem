@@ -2,7 +2,7 @@
 
 namespace ExamSystem.DataAccess.Abstract
 {
-    public interface IExaminerDal : IEntityRepository<Examiner>
+    public interface IStudentStatisticsDal : IEntityRepository<StudentStatistics>
     {
 
     }

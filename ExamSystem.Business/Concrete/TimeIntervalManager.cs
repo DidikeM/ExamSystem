@@ -17,5 +17,15 @@ namespace ExamSystem.Business.Concrete
         {
             return _timeIntervalDal.Get(p => p.ID == id);
         }
+
+        public void Add(TimeInterval timeInterval)
+        {
+            _timeIntervalDal.Add(timeInterval);
+        }
+
+        public void Update(TimeInterval timeInterval)
+        {
+            _timeIntervalDal.Update(timeInterval);
+        }
     }
 }

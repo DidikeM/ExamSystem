@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using ExamSystem.Business.Abstract;
 using ExamSystem.Business.DependencyResolvers.Ninject;
 using ExamSystem.Entities.Concrete;
+using ExamSystem.WebFormsUI.Forms.ExaminerForms;
+using ExamSystem.WebFormsUI.Forms.StudentForms;
 
 namespace ExamSystem.WebFormsUI.Forms
 {
@@ -62,6 +64,8 @@ namespace ExamSystem.WebFormsUI.Forms
                 if (_userService.CheckUserRegister(user))
                 {
                     _userService.Add(user);
+                    pnlRegister.Visible = true;
+                    pnlLogin.Visible = false;
                 }
                 else
                 {
@@ -92,10 +96,14 @@ namespace ExamSystem.WebFormsUI.Forms
 
                             break;
                         case 2:
-
+                            FrmExaminerMain frmExaminerMain = new FrmExaminerMain(user);
+                            frmExaminerMain.Show();
+                            this.Hide();
                             break;
                         case 3:
-
+                            FrmStudentMain frmStudentMain = new FrmStudentMain(user);
+                            frmStudentMain.Show();
+                            this.Hide();
                             break;
                     }
                 }

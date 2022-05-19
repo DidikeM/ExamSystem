@@ -6,5 +6,6 @@ namespace ExamSystem.Business.Abstract
     {
         void Add(Student student);
         Student GetById(int id);
+        Student GetByUserId(int userId);
     }
 }

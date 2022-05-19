@@ -75,7 +75,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.tbpMain.Appearance.Options.UseBackColor = true;
             this.tbpMain.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 900F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 1240F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.tbpMain.Controls.Add(this.tbpQuestion);
             this.tbpMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,7 +99,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.tbpQuestion.Controls.Add(this.tbpQuestionİnfo);
             this.tbpQuestion.Controls.Add(this.rtbQuestion);
             this.tbpQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbpQuestion.Location = new System.Drawing.Point(273, 3);
+            this.tbpQuestion.Location = new System.Drawing.Point(103, 3);
             this.tbpQuestion.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.tbpQuestion.LookAndFeel.UseDefaultLookAndFeel = false;
             this.tbpQuestion.Name = "tbpQuestion";
@@ -108,7 +108,7 @@ namespace ExamSystem.WebFormsUI.Forms
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 400F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tbpQuestion.Size = new System.Drawing.Size(894, 671);
+            this.tbpQuestion.Size = new System.Drawing.Size(1234, 671);
             this.tbpQuestion.TabIndex = 0;
             // 
             // tbpChoice
@@ -117,7 +117,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.tbpChoice.Appearance.Options.UseBackColor = true;
             this.tbpQuestion.SetColumn(this.tbpChoice, 0);
             this.tbpChoice.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 5F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
             this.tbpChoice.Controls.Add(this.lblTableText);
             this.tbpChoice.Controls.Add(this.picChoiceD);
@@ -140,7 +140,7 @@ namespace ExamSystem.WebFormsUI.Forms
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tbpChoice.Size = new System.Drawing.Size(888, 165);
+            this.tbpChoice.Size = new System.Drawing.Size(1228, 165);
             this.tbpChoice.TabIndex = 3;
             // 
             // lblTableText
@@ -158,7 +158,7 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             this.tbpChoice.SetColumn(this.picChoiceD, 1);
             this.picChoiceD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picChoiceD.Location = new System.Drawing.Point(27, 126);
+            this.picChoiceD.Location = new System.Drawing.Point(37, 126);
             this.picChoiceD.Name = "picChoiceD";
             this.picChoiceD.Properties.AllowFocused = false;
             this.picChoiceD.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -168,7 +168,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.picChoiceD.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.picChoiceD.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.tbpChoice.SetRow(this.picChoiceD, 4);
-            this.picChoiceD.Size = new System.Drawing.Size(858, 36);
+            this.picChoiceD.Size = new System.Drawing.Size(1188, 36);
             this.picChoiceD.TabIndex = 6;
             this.picChoiceD.Click += new System.EventHandler(this.ChoiceD_Click);
             // 
@@ -176,7 +176,7 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             this.tbpChoice.SetColumn(this.picChoiceC, 1);
             this.picChoiceC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picChoiceC.Location = new System.Drawing.Point(27, 85);
+            this.picChoiceC.Location = new System.Drawing.Point(37, 85);
             this.picChoiceC.Name = "picChoiceC";
             this.picChoiceC.Properties.AllowFocused = false;
             this.picChoiceC.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -186,7 +186,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.picChoiceC.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.picChoiceC.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.tbpChoice.SetRow(this.picChoiceC, 3);
-            this.picChoiceC.Size = new System.Drawing.Size(858, 35);
+            this.picChoiceC.Size = new System.Drawing.Size(1188, 35);
             this.picChoiceC.TabIndex = 6;
             this.picChoiceC.Click += new System.EventHandler(this.ChoiceC_Click);
             // 
@@ -194,7 +194,7 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             this.tbpChoice.SetColumn(this.picChoiceB, 1);
             this.picChoiceB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picChoiceB.Location = new System.Drawing.Point(27, 44);
+            this.picChoiceB.Location = new System.Drawing.Point(37, 44);
             this.picChoiceB.Name = "picChoiceB";
             this.picChoiceB.Properties.AllowFocused = false;
             this.picChoiceB.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -204,7 +204,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.picChoiceB.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.picChoiceB.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.tbpChoice.SetRow(this.picChoiceB, 2);
-            this.picChoiceB.Size = new System.Drawing.Size(858, 35);
+            this.picChoiceB.Size = new System.Drawing.Size(1188, 35);
             this.picChoiceB.TabIndex = 6;
             this.picChoiceB.Click += new System.EventHandler(this.ChoiceB_Click);
             // 
@@ -212,7 +212,7 @@ namespace ExamSystem.WebFormsUI.Forms
             // 
             this.tbpChoice.SetColumn(this.picChoiceA, 1);
             this.picChoiceA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picChoiceA.Location = new System.Drawing.Point(27, 3);
+            this.picChoiceA.Location = new System.Drawing.Point(37, 3);
             this.picChoiceA.Name = "picChoiceA";
             this.picChoiceA.Properties.AllowFocused = false;
             this.picChoiceA.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -222,54 +222,62 @@ namespace ExamSystem.WebFormsUI.Forms
             this.picChoiceA.Properties.PictureAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.picChoiceA.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.tbpChoice.SetRow(this.picChoiceA, 1);
-            this.picChoiceA.Size = new System.Drawing.Size(858, 35);
+            this.picChoiceA.Size = new System.Drawing.Size(1188, 35);
             this.picChoiceA.TabIndex = 5;
             this.picChoiceA.Click += new System.EventHandler(this.ChoiceA_Click);
             // 
             // lblChoiceD
             // 
+            this.lblChoiceD.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblChoiceD.Appearance.Options.UseFont = true;
             this.tbpChoice.SetColumn(this.lblChoiceD, 0);
             this.lblChoiceD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblChoiceD.Location = new System.Drawing.Point(3, 126);
             this.lblChoiceD.Name = "lblChoiceD";
             this.tbpChoice.SetRow(this.lblChoiceD, 4);
-            this.lblChoiceD.Size = new System.Drawing.Size(18, 36);
+            this.lblChoiceD.Size = new System.Drawing.Size(28, 36);
             this.lblChoiceD.TabIndex = 4;
             this.lblChoiceD.Text = "D-) ";
             this.lblChoiceD.Click += new System.EventHandler(this.ChoiceD_Click);
             // 
             // lblChoiceC
             // 
+            this.lblChoiceC.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblChoiceC.Appearance.Options.UseFont = true;
             this.tbpChoice.SetColumn(this.lblChoiceC, 0);
             this.lblChoiceC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblChoiceC.Location = new System.Drawing.Point(3, 85);
             this.lblChoiceC.Name = "lblChoiceC";
             this.tbpChoice.SetRow(this.lblChoiceC, 3);
-            this.lblChoiceC.Size = new System.Drawing.Size(18, 35);
+            this.lblChoiceC.Size = new System.Drawing.Size(28, 35);
             this.lblChoiceC.TabIndex = 4;
             this.lblChoiceC.Text = "C-) ";
             this.lblChoiceC.Click += new System.EventHandler(this.ChoiceC_Click);
             // 
             // lblChoiceB
             // 
+            this.lblChoiceB.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblChoiceB.Appearance.Options.UseFont = true;
             this.tbpChoice.SetColumn(this.lblChoiceB, 0);
             this.lblChoiceB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblChoiceB.Location = new System.Drawing.Point(3, 44);
             this.lblChoiceB.Name = "lblChoiceB";
             this.tbpChoice.SetRow(this.lblChoiceB, 2);
-            this.lblChoiceB.Size = new System.Drawing.Size(18, 35);
+            this.lblChoiceB.Size = new System.Drawing.Size(28, 35);
             this.lblChoiceB.TabIndex = 4;
             this.lblChoiceB.Text = "B-) ";
             this.lblChoiceB.Click += new System.EventHandler(this.ChoiceB_Click);
             // 
             // lblChoiceA
             // 
+            this.lblChoiceA.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblChoiceA.Appearance.Options.UseFont = true;
             this.tbpChoice.SetColumn(this.lblChoiceA, 0);
             this.lblChoiceA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblChoiceA.Location = new System.Drawing.Point(3, 3);
             this.lblChoiceA.Name = "lblChoiceA";
             this.tbpChoice.SetRow(this.lblChoiceA, 1);
-            this.lblChoiceA.Size = new System.Drawing.Size(18, 35);
+            this.lblChoiceA.Size = new System.Drawing.Size(28, 35);
             this.lblChoiceA.TabIndex = 0;
             this.lblChoiceA.Text = "A-) ";
             this.lblChoiceA.Click += new System.EventHandler(this.ChoiceA_Click);
@@ -305,7 +313,7 @@ namespace ExamSystem.WebFormsUI.Forms
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tbpQuestionİnfo.Size = new System.Drawing.Size(894, 100);
+            this.tbpQuestionİnfo.Size = new System.Drawing.Size(1234, 100);
             this.tbpQuestionİnfo.TabIndex = 2;
             // 
             // lblSectionNameValue
@@ -314,10 +322,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblSectionNameValue.Appearance.Options.UseFont = true;
             this.tbpQuestionİnfo.SetColumn(this.lblSectionNameValue, 3);
             this.lblSectionNameValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSectionNameValue.Location = new System.Drawing.Point(674, 69);
+            this.lblSectionNameValue.Location = new System.Drawing.Point(929, 69);
             this.lblSectionNameValue.Name = "lblSectionNameValue";
             this.tbpQuestionİnfo.SetRow(this.lblSectionNameValue, 2);
-            this.lblSectionNameValue.Size = new System.Drawing.Size(218, 28);
+            this.lblSectionNameValue.Size = new System.Drawing.Size(303, 28);
             this.lblSectionNameValue.TabIndex = 6;
             this.lblSectionNameValue.Text = "Value";
             // 
@@ -327,10 +335,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblUnitNameValue.Appearance.Options.UseFont = true;
             this.tbpQuestionİnfo.SetColumn(this.lblUnitNameValue, 3);
             this.lblUnitNameValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUnitNameValue.Location = new System.Drawing.Point(674, 36);
+            this.lblUnitNameValue.Location = new System.Drawing.Point(929, 36);
             this.lblUnitNameValue.Name = "lblUnitNameValue";
             this.tbpQuestionİnfo.SetRow(this.lblUnitNameValue, 1);
-            this.lblUnitNameValue.Size = new System.Drawing.Size(218, 27);
+            this.lblUnitNameValue.Size = new System.Drawing.Size(303, 27);
             this.lblUnitNameValue.TabIndex = 5;
             this.lblUnitNameValue.Text = "Value";
             // 
@@ -340,10 +348,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblLectureNameValue.Appearance.Options.UseFont = true;
             this.tbpQuestionİnfo.SetColumn(this.lblLectureNameValue, 3);
             this.lblLectureNameValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLectureNameValue.Location = new System.Drawing.Point(674, 3);
+            this.lblLectureNameValue.Location = new System.Drawing.Point(929, 3);
             this.lblLectureNameValue.Name = "lblLectureNameValue";
             this.tbpQuestionİnfo.SetRow(this.lblLectureNameValue, 0);
-            this.lblLectureNameValue.Size = new System.Drawing.Size(218, 27);
+            this.lblLectureNameValue.Size = new System.Drawing.Size(303, 27);
             this.lblLectureNameValue.TabIndex = 4;
             this.lblLectureNameValue.Text = "Value";
             // 
@@ -353,10 +361,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblSectionNumberValue.Appearance.Options.UseFont = true;
             this.tbpQuestionİnfo.SetColumn(this.lblSectionNumberValue, 1);
             this.lblSectionNumberValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSectionNumberValue.Location = new System.Drawing.Point(227, 69);
+            this.lblSectionNumberValue.Location = new System.Drawing.Point(312, 69);
             this.lblSectionNumberValue.Name = "lblSectionNumberValue";
             this.tbpQuestionİnfo.SetRow(this.lblSectionNumberValue, 2);
-            this.lblSectionNumberValue.Size = new System.Drawing.Size(218, 28);
+            this.lblSectionNumberValue.Size = new System.Drawing.Size(303, 28);
             this.lblSectionNumberValue.TabIndex = 3;
             this.lblSectionNumberValue.Text = "Value";
             // 
@@ -366,10 +374,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblUnitNumberValue.Appearance.Options.UseFont = true;
             this.tbpQuestionİnfo.SetColumn(this.lblUnitNumberValue, 1);
             this.lblUnitNumberValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUnitNumberValue.Location = new System.Drawing.Point(227, 36);
+            this.lblUnitNumberValue.Location = new System.Drawing.Point(312, 36);
             this.lblUnitNumberValue.Name = "lblUnitNumberValue";
             this.tbpQuestionİnfo.SetRow(this.lblUnitNumberValue, 1);
-            this.lblUnitNumberValue.Size = new System.Drawing.Size(218, 27);
+            this.lblUnitNumberValue.Size = new System.Drawing.Size(303, 27);
             this.lblUnitNumberValue.TabIndex = 2;
             this.lblUnitNumberValue.Text = "Value";
             // 
@@ -379,10 +387,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblgradeNumberValue.Appearance.Options.UseFont = true;
             this.tbpQuestionİnfo.SetColumn(this.lblgradeNumberValue, 1);
             this.lblgradeNumberValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblgradeNumberValue.Location = new System.Drawing.Point(227, 3);
+            this.lblgradeNumberValue.Location = new System.Drawing.Point(312, 3);
             this.lblgradeNumberValue.Name = "lblgradeNumberValue";
             this.tbpQuestionİnfo.SetRow(this.lblgradeNumberValue, 0);
-            this.lblgradeNumberValue.Size = new System.Drawing.Size(218, 27);
+            this.lblgradeNumberValue.Size = new System.Drawing.Size(303, 27);
             this.lblgradeNumberValue.TabIndex = 1;
             this.lblgradeNumberValue.Text = "Value";
             // 
@@ -394,10 +402,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblSectionName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tbpQuestionİnfo.SetColumn(this.lblSectionName, 2);
             this.lblSectionName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSectionName.Location = new System.Drawing.Point(450, 69);
+            this.lblSectionName.Location = new System.Drawing.Point(620, 69);
             this.lblSectionName.Name = "lblSectionName";
             this.tbpQuestionİnfo.SetRow(this.lblSectionName, 2);
-            this.lblSectionName.Size = new System.Drawing.Size(218, 28);
+            this.lblSectionName.Size = new System.Drawing.Size(303, 28);
             this.lblSectionName.TabIndex = 5;
             this.lblSectionName.Text = "Konu Adı:";
             // 
@@ -409,10 +417,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblUnitName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tbpQuestionİnfo.SetColumn(this.lblUnitName, 2);
             this.lblUnitName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUnitName.Location = new System.Drawing.Point(450, 36);
+            this.lblUnitName.Location = new System.Drawing.Point(620, 36);
             this.lblUnitName.Name = "lblUnitName";
             this.tbpQuestionİnfo.SetRow(this.lblUnitName, 1);
-            this.lblUnitName.Size = new System.Drawing.Size(218, 27);
+            this.lblUnitName.Size = new System.Drawing.Size(303, 27);
             this.lblUnitName.TabIndex = 4;
             this.lblUnitName.Text = "Ünite Adı:";
             // 
@@ -424,10 +432,10 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblLectureName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tbpQuestionİnfo.SetColumn(this.lblLectureName, 2);
             this.lblLectureName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLectureName.Location = new System.Drawing.Point(450, 3);
+            this.lblLectureName.Location = new System.Drawing.Point(620, 3);
             this.lblLectureName.Name = "lblLectureName";
             this.tbpQuestionİnfo.SetRow(this.lblLectureName, 0);
-            this.lblLectureName.Size = new System.Drawing.Size(218, 27);
+            this.lblLectureName.Size = new System.Drawing.Size(303, 27);
             this.lblLectureName.TabIndex = 3;
             this.lblLectureName.Text = "Dersin Adı:";
             // 
@@ -442,7 +450,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblSectionNumber.Location = new System.Drawing.Point(3, 69);
             this.lblSectionNumber.Name = "lblSectionNumber";
             this.tbpQuestionİnfo.SetRow(this.lblSectionNumber, 2);
-            this.lblSectionNumber.Size = new System.Drawing.Size(218, 28);
+            this.lblSectionNumber.Size = new System.Drawing.Size(303, 28);
             this.lblSectionNumber.TabIndex = 2;
             this.lblSectionNumber.Text = "Konu No:";
             // 
@@ -457,7 +465,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblUnitNumber.Location = new System.Drawing.Point(3, 36);
             this.lblUnitNumber.Name = "lblUnitNumber";
             this.tbpQuestionİnfo.SetRow(this.lblUnitNumber, 1);
-            this.lblUnitNumber.Size = new System.Drawing.Size(218, 27);
+            this.lblUnitNumber.Size = new System.Drawing.Size(303, 27);
             this.lblUnitNumber.TabIndex = 1;
             this.lblUnitNumber.Text = "Ünite No:";
             // 
@@ -472,7 +480,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.lblgradeNumber.Location = new System.Drawing.Point(3, 3);
             this.lblgradeNumber.Name = "lblgradeNumber";
             this.tbpQuestionİnfo.SetRow(this.lblgradeNumber, 0);
-            this.lblgradeNumber.Size = new System.Drawing.Size(218, 27);
+            this.lblgradeNumber.Size = new System.Drawing.Size(303, 27);
             this.lblgradeNumber.TabIndex = 0;
             this.lblgradeNumber.Text = "Sınıf Düzeyi:";
             // 
@@ -491,7 +499,7 @@ namespace ExamSystem.WebFormsUI.Forms
             this.rtbQuestion.ReadOnly = true;
             this.tbpQuestion.SetRow(this.rtbQuestion, 1);
             this.rtbQuestion.ShowCaretInReadOnly = false;
-            this.rtbQuestion.Size = new System.Drawing.Size(888, 394);
+            this.rtbQuestion.Size = new System.Drawing.Size(1228, 394);
             this.rtbQuestion.TabIndex = 0;
             // 
             // FrmQuestionView
