@@ -1,8 +1,8 @@
 # **ExamSystem**
--C# WinForm
--Katmanlı Mimari(n Layered Mimari)
--Ninject
--Entity Framework
+- C# WinForm
+- Katmanlı Mimari(n Layered Mimari)
+- Ninject
+- Entity Framework
 
 Bu proje winform olarak SOLID KISS DRY tasarım kalıpları kullanılmakta olup database olarak mssql seçilmiştir. Entity Framework ile database ile program arasındaki bağlantı sağlanmıştır.
 
